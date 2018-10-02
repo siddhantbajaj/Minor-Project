@@ -1,0 +1,85 @@
+Paper: Studying User Footprints in
+Different Online Social Networks
+
+Authors: Anshu Malhotra, Luam Totti, Wagner Meira Jr, Ponnurangam Kumaraguru, Virgilio Almeida
+
+Conference: Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)
+
+Publisher: IEEE Computer Society
+
+
+Summary:
+
+They extracted information about user identities on different social networks through Social Graph API, FriendFeed, and Profilactic; They collated their own dataset to create the digital footprints of the users.
+
+They used username, display name, description, location, profile image, and number of connections to generate the digital footprints of the user.
+
+They applied context specific techniques to measure the similarity of the user profiles on different social networks.
+
+Br identities has many benefits e.g. profile management like managing setting 1 and building a global social networking profile, 2 help user monitor and control her personal information leakage , user profile portability , personalization , -.
+
+Linking users' multiple online profiles facilitates analysis across different social networks which helps in detecting and protecting users from various privacy and security threats arising due to vast amount of publicly available user information.
+
+All these factors make user profile linking across social networks a challenging task in comparison to Named Entity Recognition.
+
+The major contributions of their work are: They propose the use of automated classifiers to classify the input profiles as belonging to the same user or not.
+
+Section III describes their system for user profile disambiguation.
+
+Section V discuss the user profile features and the corresponding similarity metrics used to compare them.
+
+Generated Friend Of A Friend ontology based graphs from FOAF files / data obtained from different social networks and linked multiple user accounts based on the identifiers like Email ID, Instant Messenger ID. The majority of the analysis was done for blogging websites.
+
+Applied graph based similarity metrics to compare user graphs generated from the FOAF files corresponding to the user accounts on different social networks; if the graphs qualified a threshold similarity score, they were considered to be belonging to the same user.
+
+User profile attributes were used to identify accounts belonging to the same user , , , -.
+
+Proposed a user account identification algorithm which computes a weighted score by comparing different user profile attributes, and if the score is above a threshold, they are deemed to be matched.
+
+Each pair of accounts belonging to a same entity generated a similarity vector in the form < usernamescore , namescore , descriptionscore , locationscore , imagescore , connectionsscore >, where fscore is the similarity score between the field f of the user profile in both services.
+
+Account Correlation Extractor collates the user profiles known to be belonging to the same user across different social networks.
+
+Profile Crawler crawls the public profile information from Twitter and LinkedIn APIs for paired user accounts for these services.
+
+Various classifiers are trained for account pairs belonging to same users and pairs belonging to different users, which are then used to disambiguate user profiles i.e. classify After this first stage of data collection, They had true positive connections of the profiles belonging to the same user across different social networks.
+
+They wanted to measure the effectiveness of different features of a user profile in forming unique and distinguishable digital footprints of a user.
+
+To accomplish these tasks, They required the profile features of the user profiles from different social networks.
+
+Using the unique user handle, they crawled and collected the publicly available profile fields of the users.
+
+8 B. Data Summary To start with, their data consisted of 41,336 user profiles from each of the following services: Twitter, YouTube and Flickr.
+
+User Profile Disambiguator was used for system evaluation.
+
+70 Missing 60 the given input profile pairs to be belonging to the same user or not.
+
+The first stage involved collecting the true positive connections, i.e. the profiles from different services known to belong to the same user.
+
+When connections for a given user profile URL are requested, Social Graph returns other profile URLs that are alternative identities of the requested user, allowing us to retrieve accounts of a same user across multiple services.
+
+Social Aggregators: Social network aggregators are services that pull together the feeds from multiple social networks that the user manually configured.
+
+V. O NLINE D IGITAL F OOTPRINTS A user profile on any social networking website can be seen as an N dimensional vector, where each dimension is a profile field, e.g., username, first name, last name, location, description / about me, relationship and others.
+
+A subset of these features from one social network can be used to disambiguate the same user from millions of other users on another social network.
+
+They use the WuPalmer similarity metric between tokens of the description fields from the two user profiles to be matched.
+
+The collected user profiles provide the URL in which the image is made available.
+
+For LinkedIn, a user v is a connection of u if v belongs to the private network of user u. The number of connections in different services can assume different ranges, with different meanings.
+
+After training the classifier, they were tested by giving them as input a Twitter-LinkedIn profile pair to be classified as a "Match" or a "Non Match." A "Match" means that the two given input profiles belong to the same user, while "Non Match" means they don't.
+
+They modified Na¨ıve Bayes to return the probability that the similarity vector vi was generated by 2 profiles that belong to the same user.
+
+They used multiple profile features and sophisticated similarity metrics to compare them and assessed their discriminative capacity for user profile disambiguation.
+
+They tested their system in real world to find candidate user profiles on Twitter, using the display name of a LinkedIn user.
+
+Seventy five percent of the times, the correct user profile was in the top 3 results returned by their system.
+
+Their proposed user profile disambiguation system can help security analysts compare and analyze two different social networks.
