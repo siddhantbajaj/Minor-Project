@@ -1,0 +1,82 @@
+Paper: Walking in Facebook, A Case Study of Unbiased Sampling of OSNs
+
+Authors: Minas Gjoka, Carter T. Butts
+
+
+Theye considered Random Walk sampling, which also leads to bias towards high degree nodes, but at least its bias can be quantified by Markov Chain analysis and thus can be corrected via appropriate re-weighting.
+
+they demonstrate their aggregate statistical properties, validating them against the known uniform sample, and show how their formal diagnostics can be used to identify convergence during the sampling process.
+
+In contrast, they find that the more traditional methods - BFS and RW - lead to a significant bias in the case of FB. Finally, using one of 2 their validated samples, they also characterize some key properties of Facebook; they find some of them to be substantively different from what was previously believed based on biased samples.
+
+Section V evaluates and compares all sampling techniques in terms of convergence of various node properties and quality of the obtained sample.
+
+These methods vary in the order in which they visit the nodes; examples include Breadth-Search-First, Depth-First Search, Forest Fire and Snowball Sampling.
+
+Compared to the aforementioned sampling techniques, their work is mostly related to the random walk techniques, as they obtain unbiased estimators using MHRW and RWRW; BFS and RW are used mainly as baselines for comparison.
+
+In terms of application, they perform unbiased sampling of Facebook for the first time.
+
+A unique asset of their study is a true uniform sample through sampling of userIDs, which can serve as ground truth to evaluate the crawling technique.
+
+Their sampling methodology is a region-constrained BFS. Such Region-Constrained BFS might be appropriate to study particular regions, but it does not provide Facebook-wide information, which is the goal of their study; furthermore, and unlike random walks, the bias of BFS has not been formally analyzed for arbitrary graphs.
+
+In contrast, they sample the global Facebook social graph and also make the data set publicly available.
+
+There are many ways, depending on the particular sampling method, in which they can proceed.
+
+their ultimate goal is to obtain a uniform random sample of users in Facebook.
+
+In a connected and aperiodic graph, the probability of being at the particular node kv , i.e. v converges to the stationary distribution πvRW = 2·|E| RW the classic RW samples nodes w.p. πv kv.
+
+In Section V, they show that several other node properties are correlated with the node degree and thus estimated with bias by RW sampling.
+
+The Metropolis-Hastings algorithm is a general Markov Chain Monte Carlo technique for sampling from a probability distribution that is difficult to sample from directly.
+
+For a fair comparison, they compare multiple MHRWs to multiple RWs and multiple BFSs, all starting from the same set of nodes V0. 2) Detecting Convergence with Online Diagnostics: Inferences from MCMC assume that the samples are derived from the equilibrium distribution, which is true asymptotically.
+
+A standard approach is to run the sampling long enough and to discard a number of initial 'burn-in' iterations.
+
+D. Ground Truth: Uniform Sample Assessing the quality of any sampling method on an unknown graph is a challenging task.
+
+Although UNI sampling currently solves the problem of uniform node sampling in Facebook and is a valuable asset of this study, it is not a general solution for sampling OSNs.
+
+In summary, they were fortunate to have obtained uniform sampling of userIDs and thus be able to evaluate the different sampling methods against "Ground truth".
+
+Second, there exist nodes with degree ku = 0; these are not reachable by any crawls, but they stumble upon them during the UNI sampling of the userID space.
+
+For the UNI sampling, they checked 18.53M user IDs picked uniformly at random from.
+
+Finally, they collected 37K egonets, a randomly chosen sub-sample of the 1M MHRW sample, which contain basic node information for 5.83M unique neighbors.
+
+Third, they obtained empirical evidence by comparing their metrics of interest bettheyen the UNI sample of Table I and a similarly sized UNI sample obtained 45 days later.
+
+The remaining 75K x 28 sampled nodes is their main sample dataset; for a fair comparison they also exclude the same number of burn-in samples from all datasets.
+
+Finally, in Section V-C, they summarize their their findings and provide recommendations for the use of sampling methods in practice.
+
+1) How to count: Counting samples in BFS is trivial since nodes are visited at most once.
+
+In the random walks, nodes can be revisited and repetitions must be included in the sample in order to ensure the desired statistical properties.
+
+2(top) presents the results for the convergence of the average node degree in the MHRW sample.
+
+2 they plot the R score for four different metrics in the MHRW sample, namely node degree regional network iii) privacy settings membership in specific regional networks.
+
+they consider four sampling techniques: BFS, RW, RWRW and MHRW. they present how often a specific type of node is visited by the 28 crawlers, and by the uniform UNI sampler.
+
+One MHRW crawl overestimates the size of 'New York, NY' by roughly 100%. The probability that a perfect sampling makes such an error is  i P∞ uniform i pi 4.3 10−13 , where i0 = 1K, n = i=i0 n 81K and p = 0.006.
+
+Degree distribution estimated by the sampling techniques and the ground truth.
+
+100 they believe that such tests can and should be used in field implementations of walk-based sampling methods to ensure that samples are adequate for subsequent analysis.
+
+The collected samples were validated against a true uniform sample, as well as via formal convergence diagnostics, and were shown to have good statistical properties.
+
+L.Becchetti, C.Castillo, D.Donato, and A.Fazzone, "A comparison of sampling techniques for web graph characterization," in LinkKDD, 2006.
+
+O. Skare, "Improved sampling-importance resampling and reduced bias importance sampling." Scandin.
+
+A PPENDIX : C ORRECTNESS OF UNI S AMPLING Proposition: UNI yields a uniform sample of the existing user IDs in Facebook for any allocation policy.
+
+Let, i.e., with pdf fU = |U| y∈U K = |U| |A| s.t. fA K fU for any x. Now, draw x fA = 1x∈A , from fU and accept it with probability K·f U i.e., always if x A and never if x∈ / A. The resulting sample follows the distribution fA, i.e., is taken uniformly at random from A.  The above is just a special case of rejection sampling , when the distribution of interest is uniform.
